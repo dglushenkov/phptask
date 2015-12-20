@@ -19,4 +19,17 @@ function getPlacement($char, $A, $B = [])
     }
 }
 
-placements();
+function placements2($a, $b = [], $char = '')
+{
+    if ($char) {
+        $b[] = $char;
+        echo implode('', $b).'<br>';
+    }
+
+    $diffA = array_diff($a, $b);
+    foreach ($diffA as $newChar) {
+        placements2($a, $b, $newChar);
+    }
+}
+
+placements2(['a', 'b', 'c', 'd']);
