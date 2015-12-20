@@ -1,0 +1,22 @@
+public function taskThreeAction()
+{
+	$A = ['a', 'b', 'c', 'd'];
+	$l = count($A);
+	for ($i = 0; $i < $l; $i++) {
+		$this->getPlacement($i, $A, $l);
+	}
+	var_dump($this->plt);
+}
+
+protected function getPlacement($i, $A, $l, $n = 0, $B = []){
+	$B[] = $A[$i];
+	array_push($this->plt, $B);
+	$n++;
+	if($n < $l){
+		for($j = 0; $j < $l; $j++){
+			if(!in_array($A[$j], $B)){
+			  $this->getPlacement($j, $A, $l, $n, $B);
+			}
+		}
+	}
+}
