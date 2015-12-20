@@ -76,8 +76,8 @@ function printPrimes($primes)
     }
 }
 
-//printPrimes(getPrimes1(1000));
-//printPrimes(getPrimes2(1000));
-echo 'Oksana : '.bench('getPrimes1', 10000, 20).'<br>';
-echo 'Dmitry : '.bench('getPrimes2', 10000, 20).'<br>';
+printPrimes(getPrimes1(1000));
+printPrimes(getPrimes2(1000));
+//echo 'Oksana : '.bench('getPrimes1', 10000, 20).'<br>';
+//echo 'Dmitry : '.bench('getPrimes2', 10000, 20).'<br>';
 
